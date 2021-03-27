@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.daimajia.swipe.SwipeLayout android:id="@+id/swipe_layout"
+                                xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+    >
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/action_delete"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerInside"
+        app:fab_colorNormal="#fff"
+        app:fab_colorPressed="@color/whitePressed"
+        app:fab_colorRipple="@color/whiteRipple"
+        app:fab_elevationCompat="0dp"
+        app:fab_shadowRadius="0dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/content_panel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:orientation="vertical"
+        android:background="?attr/selectableItemBackground"
+        >
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textSize="@dimen/txt_size_big"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_marginRight="40dp"
+            />
+
+        <TextView
+            android:id="@+id/txt_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_alignParentRight="true"
+            android:textSize="@dimen/txt_size_big"
+            />
+
+    </RelativeLayout>
+</com.daimajia.swipe.SwipeLayout>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/setting_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        />
+
+    <TextView
+        android:id="@+id/txt_edit_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/edit_group"
+        android:textColor="@color/greyPrimary"
+        android:textSize="@dimen/txt_size_large"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Default"
+        android:id="@+id/txt_group"
+        android:textSize="@dimen/txt_size_large"
+        android:layout_alignBottom="@id/txt_edit_group"
+        android:layout_toRightOf="@id/txt_edit_group"
+        android:gravity="right"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/greyPrimary"
+        android:maxLines="1"
+        android:ellipsize="end"
+        />
+
+    <TextView
+        android:id="@+id/txt_copyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:text="Beckysoft 2015"
+        android:textColor="@color/greyPrimary"
+        android:textSize="@dimen/txt_size_small"
+        />
+
+    <TextView
+        android:id="@+id/txt_theme_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_edit_group"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/theme"
+        android:textColor="@color/greyPrimary"
+        android:textSize="@dimen/txt_size_large"
+        />
+
+
+        <FrameLayout
+            android:id="@+id/theme_color_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_theme_title"
+            android:layout_alignLeft="@id/txt_theme_title"
+            android:layout_margin="5dp"
+            android:background="@color/shadow"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/bg_theme_colorful"
+                />
+
+            <ImageView
+                android:id="@+id/img_color_selected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|top"
+                android:visibility="gone"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/theme_simple_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/theme_color_container"
+            android:layout_alignTop="@id/theme_color_container"
+            android:background="@color/shadow"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/bg_theme_simple"
+                />
+
+            <ImageView
+                android:id="@+id/img_simple_selected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|top"
+                android:visibility="gone"
+                />
+
+        </FrameLayout>
+
+    <TextView
+        android:id="@+id/txt_sound_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/theme_simple_container"
+        android:layout_marginLeft="16dp"
+        android:text="@string/sound"
+        android:textColor="@color/greyPrimary"
+        android:textSize="@dimen/txt_size_large"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/txt_size_large"
+        android:layout_alignTop="@id/txt_sound_title"
+        android:layout_alignBottom="@id/txt_sound_title"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:textColor="@color/greyPrimary"
+        android:paddingTop="16dp"
+        android:id="@+id/txt_sound_on_off"
+        />
+
+    <TextView
+        android:id="@+id/txt_backup_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_sound_title"
+        android:layout_marginLeft="16dp"
+        android:text="@string/setting_backup"
+        android:textColor="@color/greyPrimary"
+        android:textSize="@dimen/txt_size_large"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        />
+
+    <TextView
+        android:id="@+id/txt_font_size_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_backup_title"
+        android:layout_marginLeft="16dp"
+        android:text="@string/font_size_title"
+        android:textColor="@color/greyPrimary"
+        android:textSize="@dimen/txt_size_large"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        />
+
+    <douzifly.list.widget.FontSizeBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_font_size_title"
+        android:id="@+id/font_size_bar"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        />
+
+    <TextView
+        android:id="@+id/txt_version_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/font_size_bar"
+        android:layout_marginLeft="16dp"
+        android:text="@string/version"
+        android:textColor="@color/greyPrimary"
+        android:textSize="@dimen/txt_size_large"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/txt_size_large"
+        android:layout_alignTop="@id/txt_version_title"
+        android:layout_alignBottom="@id/txt_version_title"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:textColor="@color/greyPrimary"
+        android:paddingTop="8dp"
+        android:id="@+id/txt_version"
+        />
+
+</RelativeLayout>

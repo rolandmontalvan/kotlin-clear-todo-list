@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<douzifly.list.widget.InputPanel
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorInputPanel"
+        >
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_add_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="18dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:text="Add Reminder"
+            android:textSize="14sp"
+            app:fab_colorNormal="@color/colorInputPanel"
+            app:fab_colorPressed="@color/whitePressed"
+            app:fab_colorRipple="@color/whiteRipple"
+            app:fab_shadowRadius="0dp"
+            app:fab_elevationCompat="0dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_alignTop="@id/fab_add_reminder"
+            android:layout_alignBottom="@id/fab_add_reminder"
+            android:layout_toRightOf="@id/fab_add_reminder"
+            android:layout_marginLeft="2dp"
+            android:textColor="@color/greyPrimary"
+            android:textSize="@dimen/txt_size_small"
+            android:id="@+id/txt_reminder"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            android:layout_toRightOf="@id/txt_reminder"
+            android:layout_alignTop="@id/txt_reminder"
+            android:layout_alignBottom="@id/txt_reminder"
+            android:scaleType="centerInside"
+            android:layout_marginLeft="2dp"
+            android:id="@+id/reminder_del"
+            android:visibility="gone"
+            />
+
+        <douzifly.list.widget.ColorPicker
+            android:id="@+id/color_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/fab_add_reminder"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="12dp"
+            >
+
+        </douzifly.list.widget.ColorPicker>
+
+
+
+
+        <EditText
+            android:id="@+id/edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="#0000"
+            android:gravity="top|left"
+            android:padding="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/title_hint"
+            android:textColor="@color/inputEditTextColor"
+            android:textSize="@dimen/txt_size_big"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@+id/edit_text_content"
+            />
+
+        <TextView
+            android:id="@+id/txt_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/color_picker"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="@dimen/txt_size_small"
+            android:text="hello"
+            />
+
+        <EditText
+            android:id="@+id/edit_text_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/txt_group"
+            android:layout_below="@id/edit_text"
+            android:background="#0000"
+            android:gravity="top|left"
+            android:padding="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/content_hint"
+            android:textColor="@color/inputEditTextColor"
+            android:textSize="@dimen/txt_size_small"
+            />
+
+
+
+
+    </RelativeLayout>
+</douzifly.list.widget.InputPanel>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorInputPanel">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginLeft="14dp"
+        android:id="@+id/title_container"
+        >
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="left|center_vertical"
+            android:layout_gravity="center"
+            android:text="hello"
+            android:textColor="@color/textDarkColor"
+            android:textSize="@dimen/txt_size_large"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:hint="@string/title_hint"
+            android:transitionName="tnTitle" />
+
+
+        <EditText
+            android:id="@+id/edit_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="left|center_vertical"
+            android:text="hello"
+            android:textColor="@color/textDarkColor"
+            android:textSize="@dimen/txt_size_large"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            android:layout_gravity="center"
+            android:nextFocusForward="@id/txt_content"
+            android:singleLine="true"
+            />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottom_container"
+        android:layout_width="match_parent"
+        android:layout_height="186dp"
+        android:layout_alignParentBottom="true"
+        >
+
+        <douzifly.list.widget.ColorPicker
+            android:id="@+id/color_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            >
+
+        </douzifly.list.widget.ColorPicker>
+
+        <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_add_reminder"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"
+                android:text="Add Reminder"
+                android:textSize="14sp"
+                app:fab_colorNormal="@color/colorInputPanel"
+                app:fab_colorPressed="@color/whitePressed"
+                app:fab_colorRipple="@color/whiteRipple"
+                app:fab_shadowRadius="0dp"
+                app:fab_elevationCompat="0dp"
+                android:layout_below="@id/color_picker"
+                />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_alignTop="@id/fab_add_reminder"
+                android:layout_alignBottom="@id/fab_add_reminder"
+                android:layout_toRightOf="@id/fab_add_reminder"
+                android:layout_marginLeft="2dp"
+                android:textColor="@color/greyPrimary"
+                android:textSize="@dimen/txt_size_small"
+                android:id="@+id/txt_reminder"
+                android:text="Reminder"
+                />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            android:layout_toRightOf="@id/txt_reminder"
+            android:layout_alignTop="@id/txt_reminder"
+            android:layout_alignBottom="@id/txt_reminder"
+            android:scaleType="centerInside"
+            android:layout_marginLeft="2dp"
+            android:id="@+id/reminder_del"
+            android:visibility="gone"
+            />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:id="@+id/center_marker"
+            android:layout_centerHorizontal="true"
+            />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/action_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:transitionName="tnDelete"
+            app:fab_colorNormal="@color/redPrimary"
+            app:fab_colorPressed="@color/redPressed"
+            app:fab_colorRipple="@color/redRipple"
+            android:layout_below="@id/fab_add_reminder"
+            android:layout_toLeftOf="@id/center_marker"
+            app:fab_label="delete" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/action_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            app:fab_colorNormal="@color/whitePrimary"
+            app:fab_colorPressed="@color/whitePressed"
+            app:fab_colorRipple="@color/whiteRipple"
+            android:layout_below="@id/fab_add_reminder"
+            android:layout_toRightOf="@id/center_marker"
+            app:fab_label="done" />
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/txt_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_container"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="@dimen/txt_size_small"
+        android:text="group"
+        />
+
+    <EditText
+        android:id="@+id/txt_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/txt_group"
+        android:layout_below="@id/title_container"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="left|top"
+        android:text="hello"
+        android:textColor="@color/textDarkColor"
+        android:textSize="@dimen/txt_size_big" />
+
+</RelativeLayout>
